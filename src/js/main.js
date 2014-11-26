@@ -1,0 +1,40 @@
+(function(){
+
+	// Check for deviceorientation support
+	if (window.DeviceOrientationEvent) {
+		console.log("DeviceOrientation is supported");
+
+		document.getElementById("doEvent").innerHTML = "DeviceOrientation";
+	
+		// Device orientation
+		window.addEventListener("deviceorientation", handleOrientation, true);
+
+
+	} else {
+		console.log("DeviceOrientation is not supported!");
+	}
+
+	function handleOrientation(evt){
+		var absolute = evt.absolute;
+		// Device orientation data
+		// z-axis - comes straight up out of the mobile, + towards as it moves up
+		var alpha = evt.alpha;
+		// y-axis - runs front-to-back across the mobile, + towards as it moves away from you
+		var beta = evt.beta;
+		// x-axis - runs side to side across the mobile, + towards the right side
+		var gamma = evt.gamma;
+
+		deviceOrientationHandler(gamma, beta, alpha);
+
+		//console.log(absolute, alpha, beta, gamma);
+	}
+
+	function deviceOrientationHandler(tiltLR, tiltFB, dir){
+		document.getElementById("doTiltLR").innerHTML = Math.round(tiltLR);
+		document.getElementById("doTiltFB").innerHTML = Math.round(tiltFB);
+		document.getElementById("doDirection").innerHTML = Math.round(dir);
+	}
+
+
+	
+})();
