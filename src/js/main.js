@@ -33,6 +33,12 @@
 		document.getElementById("doTiltLR").innerHTML = Math.round(tiltLR);
 		document.getElementById("doTiltFB").innerHTML = Math.round(tiltFB);
 		document.getElementById("doDirection").innerHTML = Math.round(dir);
+
+
+		var square = document.getElementById("square");
+		square.style.webkitTransform = "rotate("+ tiltLR +"deg) rotate3d(1,0,0, "+ (tiltFB*-1)+"deg)";
+		square.style.mozTransform = "rotate("+tiltLR +"deg)";
+		square.style.transform = "rotate("+ tiltLR+"deg) rotate3d(1,0,0,"+ (tiltFB*-1)+"deg)";
 	}
 
 
