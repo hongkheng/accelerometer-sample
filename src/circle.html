@@ -1,0 +1,80 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Accelerometer</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <style type="text/css">
+    *, *:after, *:before {
+      box-sizing: border-box;
+    }
+    body {
+      -webkit-perspective: 500;
+      -moz-perspective: 500;
+      perspective: 500;
+    }
+    html, body {
+      height: 100%;
+    }
+    .main { 
+      padding: 10px;
+    }
+    .container {
+       border: 1px solid rgba(0,0,0, 0.5);
+       height: 100%;
+       width: 100%;
+    }
+    .circle {
+      background: steelblue;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;      
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+    }
+ 
+    </style>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div id="container" class="container">
+
+      <div class="main">
+        <h1>Accelerometer test: Device Orientation</h1>
+        <p>Test code from http://www.html5rocks.com/en/tutorials/device/orientation/.</p>
+        <p><a href="circle.html">Circle in a container</a></p>
+        <table>
+          <tr>
+            <td>Event Supported</td>
+            <td id="doEvent"></td>
+          </tr>
+          <tr>
+            <td>Tilt Left/Right [gamma]</td>
+            <td id="doTiltLR"></td>
+          </tr>
+          <tr>
+            <td>Tilt Front/Back [beta]</td>
+            <td id="doTiltFB"></td>
+          </tr>
+          <tr>
+            <td>Direction [alpha]</td>
+            <td id="doDirection"></td>
+          </tr>
+        </table>           
+      </div>
+
+
+        <div id="circle" class="circle"></div>
+    </div>
+
+
+    <script src="js/circle.js"></script>
+
+  </body>
+</html>
