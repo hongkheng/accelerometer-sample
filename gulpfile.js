@@ -21,15 +21,14 @@ gulp.task('html', function() {
 });
 
 gulp.task('scripts', function(){
-	gulp.src(paths.scripts)
+	return gulp.src(paths.scripts)
 		.pipe(plugins.jshint())
-		.pipe(plugins.jshint.reporter('default'))
-		.pipe(plugins.connect.reload());
+		.pipe(plugins.jshint.reporter('default'));
 });
 
 gulp.task('watch', function(){
-	gulp.watch(['src/*.html'], ['html']);
-	gulp.watch(paths.scripts, ['scripts']);
+	plugins.livereload.listen();
+	gulp.watch(['src/**']).on('change', plugins.livereload.changed);
 });
 
 gulp.task('default', ['connect', 'watch', 'scripts']);
