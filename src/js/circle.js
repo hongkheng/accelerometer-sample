@@ -23,9 +23,9 @@
 		// Device orientation data
 		// z-axis - comes straight up out of the mobile, + towards as it moves up
 		var alpha = evt.alpha;
-		// y-axis - runs front-to-back across the mobile, + towards as it moves away from you
+		// x-axis - runs side to side across the mobile, + towards the right side [-180, 180]
 		var beta = evt.beta;
-		// x-axis - runs side to side across the mobile, + towards the right side
+		// y-axis - runs front-to-back across the mobile, + towards as it moves away from you [-90, 90]
 		var gamma = evt.gamma;
 
 		deviceOrientationHandler(gamma, beta, alpha);
