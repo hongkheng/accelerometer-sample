@@ -11,7 +11,7 @@ var paths = {
 
 gulp.task('connect', function() {
 	plugins.connect.server({
-		root: 'src',
+		root: ['src', 'bower_components'],
 		livereload: true
 	});
 });
